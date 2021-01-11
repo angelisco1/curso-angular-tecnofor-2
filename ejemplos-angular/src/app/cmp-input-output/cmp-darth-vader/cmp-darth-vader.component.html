@@ -1,0 +1,7 @@
+<h3>Darth Vader</h3>
+<p>Mi hija se llama: {{nombreHijaCompleto}}</p>
+
+<app-cmp-leia
+  [nombre]="nombreHijaCompleto"
+  (nombreCambiado)="cambiarNombreHija($event)"
+></app-cmp-leia>

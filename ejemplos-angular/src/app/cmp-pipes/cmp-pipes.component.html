@@ -1,0 +1,23 @@
+<h2>Pipes</h2>
+
+<h1>Volvemos a las 11:32</h1>
+
+
+<div>
+  <h4>{{producto.nombre | titlecase}} <span>({{producto.precio | currency:simbolo}})</span></h4>
+  <p>{{producto.fechaLanzamiento | date:'dd/MM/yyyy'}}</p>
+  <p>{{producto.descripcion}}</p>
+  <p>{{producto.descripcion | slice:0:10 | uppercase}}</p>
+  <ul>
+    <li *ngFor="let caracteristica of producto.caracteristicas | filtro:filtroTxt">{{caracteristica}}</li>
+  </ul>
+</div>
+
+<input type="text" [(ngModel)]="filtroTxt">
+
+<input type="text" (change)="addCaracteristicaAProducto($event.target.value)">
+
+<pre>{{producto | json}}</pre>
+
+<!-- <pre>{{productoAsync}}</pre> -->
+<pre>{{productoAsync | async | json}}</pre>

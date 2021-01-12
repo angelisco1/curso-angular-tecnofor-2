@@ -1,0 +1,52 @@
+<h2>Directivas</h2>
+
+<h3>De atributo</h3>
+<p
+  [ngStyle]="{backgroundColor: 'black', color: 'white'}"
+>Texto con fondo negro y letra blanca</p>
+<p
+  [ngClass]="{fondoNegro: darkMode, letraBlanca: darkMode}"
+>Texto con fondo negro y letra blanca</p>
+
+<button type="button" (click)="toggleDarkMode()">Toggle DarkMode</button>
+
+<p appBlink>Parpadeando</p>
+<p appBlink>Parpadeando</p>
+
+<h3>Estructurales</h3>
+
+<h4>ngFor</h4>
+<ul>
+  <!-- <li *ngFor="let mascota of mascotas; let posicion = index">{{posicion + 1}}: {{mascota}}</li> -->
+  <li *ngFor="let mascota of mascotas; index as posicion">
+    {{posicion + 1}}: {{mascota}}
+    <button type="button" (click)="deleteMascota(posicion)">Eliminar</button>
+  </li>
+</ul>
+
+<h4>ngIf</h4>
+<!-- <p *ngIf="darkMode">Modo oscuro activado</p> -->
+<!-- <p *ngIf="!darkMode">Modo oscuro desactivado</p> -->
+
+<!-- <p *ngIf="darkMode; else templateElse">Modo oscuro activado</p>
+<ng-template #templateElse>
+  <p>Modo oscuro desactivado</p>
+</ng-template> -->
+
+<div *ngIf="darkMode then templateIf else templateElse"></div>
+<ng-template #templateIf>
+  <p>Modo oscuro activado</p>
+</ng-template>
+<ng-template #templateElse>
+  <p>Modo oscuro desactivado</p>
+</ng-template>
+
+<h4>ngSwitch</h4>
+<input type="text" [(ngModel)]="miMascota">
+
+<div [ngSwitch]="miMascota">
+  <ng-container *ngFor="let mascota of mascotas">
+    <p *ngSwitchCase="mascota">Tengo un {{mascota}}</p>
+  </ng-container>
+  <p *ngSwitchDefault>No tengo mascota</p>
+</div>

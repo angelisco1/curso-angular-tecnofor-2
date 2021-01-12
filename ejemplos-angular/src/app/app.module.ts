@@ -8,6 +8,10 @@ import { CmpInputOutputComponent } from './cmp-input-output/cmp-input-output.com
 import { SugusComponent } from './cmp-input-output/sugus/sugus.component';
 import { CmpDarthVaderComponent } from './cmp-input-output/cmp-darth-vader/cmp-darth-vader.component';
 import { CmpLeiaComponent } from './cmp-input-output/cmp-leia/cmp-leia.component';
+import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
+import { FiltroPipe } from './cmp-pipes/filtro.pipe';
+import { CmpDirectivasComponent } from './cmp-directivas/cmp-directivas.component';
+import { BlinkDirective } from './cmp-directivas/blink.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { CmpLeiaComponent } from './cmp-input-output/cmp-leia/cmp-leia.component
     CmpInputOutputComponent,
     SugusComponent,
     CmpDarthVaderComponent,
-    CmpLeiaComponent
+    CmpLeiaComponent,
+    CmpPipesComponent,
+    FiltroPipe,
+    CmpDirectivasComponent,
+    BlinkDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+<h2>Rellena tus datos</h2>
+
+<div>
+  <div>
+    <label for="nombre">Nombre</label>
+    <input type="text" [value]="nombre" name="nombre" (input)="cambiarDato($event)">
+  </div>
+  <div>
+    <label for="apellido">Apellido</label>
+    <input type="text" [value]="apellido" name="apellido" (input)="cambiarDato($event)">
+  </div>
+  <div>
+    <label for="fecha">Fecha</label>
+    <input type="date" [value]="fecha | date:'yyyy-MM-dd'" name="fecha" (input)="cambiarDato($event)">
+  </div>
+  <div>
+    <label for="imagenUrl">URL de la imagen</label>
+    <input type="text" [value]="imagenUrl" name="imagenUrl" (input)="cambiarDato($event)">
+  </div>
+</div>

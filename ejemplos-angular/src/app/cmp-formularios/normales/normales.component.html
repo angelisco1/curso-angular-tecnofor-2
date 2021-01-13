@@ -1,0 +1,20 @@
+<h3>De plantilla</h3>
+
+<form (ngSubmit)="registro(form)" #form="ngForm">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="user" [ngModel]="valoresPorDefecto.u" required #inputUsername="ngModel">
+    <app-error-form *ngIf="inputUsername.control.invalid && inputUsername.control.dirty" [erroresForm]="inputUsername.control.errors"></app-error-form>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" [ngModel]="valoresPorDefecto.e" required pattern="^\S+@\S+\.\S+$" #inputEmail="ngModel">
+    <app-error-form *ngIf="inputEmail.control.invalid && inputEmail.control.dirty" [erroresForm]="inputEmail.control.errors"></app-error-form>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [ngModel]="valoresPorDefecto.p" required minlength="4" #inputPassword="ngModel">
+    <app-error-form *ngIf="inputPassword.control.invalid && inputPassword.control.dirty" [erroresForm]="inputPassword.control.errors"></app-error-form>
+  </div>
+  <button type="submit" [disabled]="form.invalid">Registrate!</button>
+</form>

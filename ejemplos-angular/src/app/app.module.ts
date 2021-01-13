@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CmpDataBindingComponent } from './cmp-data-binding/cmp-data-binding.component';
@@ -12,6 +12,10 @@ import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
 import { FiltroPipe } from './cmp-pipes/filtro.pipe';
 import { CmpDirectivasComponent } from './cmp-directivas/cmp-directivas.component';
 import { BlinkDirective } from './cmp-directivas/blink.directive';
+import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.component';
+import { ReactivosComponent } from './cmp-formularios/reactivos/reactivos.component';
+import { NormalesComponent } from './cmp-formularios/normales/normales.component';
+import { ErrorFormComponent } from './cmp-formularios/error-form/error-form.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +29,15 @@ import { BlinkDirective } from './cmp-directivas/blink.directive';
     FiltroPipe,
     CmpDirectivasComponent,
     BlinkDirective,
+    CmpFormulariosComponent,
+    ReactivosComponent,
+    NormalesComponent,
+    ErrorFormComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

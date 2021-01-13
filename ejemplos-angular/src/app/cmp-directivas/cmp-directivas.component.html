@@ -1,6 +1,7 @@
 <h2>Directivas</h2>
 
 <h3>De atributo</h3>
+
 <p
   [ngStyle]="{backgroundColor: 'black', color: 'white'}"
 >Texto con fondo negro y letra blanca</p>
@@ -10,8 +11,11 @@
 
 <button type="button" (click)="toggleDarkMode()">Toggle DarkMode</button>
 
+<p appBlink="red">Parpadeando</p>
+<p appBlink="blue">Parpadeando</p>
+<p appBlink="orange">Parpadeando</p>
 <p appBlink>Parpadeando</p>
-<p appBlink>Parpadeando</p>
+<!-- <p appBlink>Parpadeando</p> -->
 
 <h3>Estructurales</h3>
 

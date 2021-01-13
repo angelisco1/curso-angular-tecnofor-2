@@ -1,0 +1,20 @@
+<h3>Reactivo</h3>
+
+<form (ngSubmit)="registro()" [formGroup]="formulario">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username">
+    <app-error-form *ngIf="formulario.controls.username.invalid && formulario.controls.username.dirty" [erroresForm]="formulario.controls.username.errors"></app-error-form>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="text" id="email" formControlName="email">
+    <app-error-form *ngIf="formulario.controls.email.invalid && formulario.controls.email.dirty" [erroresForm]="formulario.controls.email.errors"></app-error-form>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password">
+    <app-error-form *ngIf="formulario.controls.password.invalid && formulario.controls.password.dirty" [erroresForm]="formulario.controls.password.errors"></app-error-form>
+  </div>
+  <button type="submit" [disabled]="formulario.invalid">Registrate!</button>
+</form>

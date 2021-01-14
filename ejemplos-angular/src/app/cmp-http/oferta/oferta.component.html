@@ -1,0 +1,6 @@
+<div>
+  <h4>{{oferta.titulo}} - ({{oferta.empresa}} | {{oferta.ciudad}})</h4>
+  <p>Salario: {{oferta.salario | currency:'EUR'}}</p>
+  <p>{{oferta.descripcion}}</p>
+  <button type="button" (click)="eliminar()">Eliminar</button>
+</div>

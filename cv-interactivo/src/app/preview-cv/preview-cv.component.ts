@@ -10,7 +10,7 @@ export class PreviewCvComponent implements OnInit {
   @Input() nombre: string;
   @Input() apellido: string;
   @Input() imagenUrl: string;
-  @Input() fecha: string;
+  @Input() fecha: Date;
   altImg: string = '';
 
   constructor() { }

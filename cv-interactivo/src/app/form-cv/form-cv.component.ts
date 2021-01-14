@@ -2,7 +2,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 interface EventCV {
   name: string,
-  value: string
+  value: string
 }
 
 @Component({
@@ -24,7 +24,7 @@ export class FormCvComponent implements OnInit {
   }
 
   cambiarDato(event) {
-    console.log(event);
+    // console.log(event);
     this.datoCambiado.emit({
       name: event.target.name,
       value: event.target.value

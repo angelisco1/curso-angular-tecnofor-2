@@ -1,0 +1,7 @@
+<h3>Cmp B</h3>
+
+<input type="text" (change)="crearDato($event.target.value)">
+
+<ul>
+  <li *ngFor="let dato of listaDatos">{{dato.texto}}</li>
+</ul>

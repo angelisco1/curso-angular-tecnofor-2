@@ -14,10 +14,6 @@ export class AppComponent {
   }
 
   actualizarCV(event) {
-    if (event.name == 'fecha') {
-      const splitFecha = event.value.split('-');
-      event.value = new Date(splitFecha[0], splitFecha[1], splitFecha[2])
-    }
     this.datosCV[event.name] = event.value;
   }
 }

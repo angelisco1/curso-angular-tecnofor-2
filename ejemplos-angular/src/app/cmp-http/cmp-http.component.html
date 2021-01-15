@@ -1,8 +1,15 @@
 <h2>HTTP</h2>
 
-<button type="button" (click)="crearOferta()">Crear oferta</button>
+<ng-container *ngIf="isLoggedIn; else noLogueado">
+  <button type="button" (click)="logout()">Logout</button>
 
-<app-oferta
-  *ngFor="let oferta of ofertasTrabajo"
-  [oferta]="oferta"
-></app-oferta>
+  <button type="button" (click)="crearOferta()">Crear oferta</button>
+  <app-oferta
+    *ngFor="let oferta of ofertasTrabajo"
+    [oferta]="oferta"
+  ></app-oferta>
+</ng-container>
+
+<ng-template #noLogueado>
+  <button type="button" (click)="login()">Login</button>
+</ng-template>

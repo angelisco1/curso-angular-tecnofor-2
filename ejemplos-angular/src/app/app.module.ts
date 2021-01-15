@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CmpDataBindingComponent } from './cmp-data-binding/cmp-data-binding.component';
@@ -23,6 +23,17 @@ import { CmpBComponent } from './cmp-servicios/cmp-b/cmp-b.component';
 import { CmpObservablesComponent } from './cmp-observables/cmp-observables.component';
 import { CmpHttpComponent } from './cmp-http/cmp-http.component';
 import { OfertaComponent } from './cmp-http/oferta/oferta.component';
+import { AuthInterceptorService } from './cmp-http/auth-interceptor.service';
+import { CmpRoutingComponent } from './cmp-routing/cmp-routing.component';
+import { UsuariosComponent } from './cmp-routing/usuarios/usuarios.component';
+import { NuevoUsuarioComponent } from './cmp-routing/nuevo-usuario/nuevo-usuario.component';
+import { InfoUsuarioComponent } from './cmp-routing/info-usuario/info-usuario.component';
+import { Router } from './cmp-routing/app.routes';
+import { EditarUsuarioComponent } from './cmp-routing/editar-usuario/editar-usuario.component';
+import { ErrorComponent } from './cmp-routing/error/error.component';
+import { TiempoComponent } from './cmp-routing/tiempo/tiempo.component';
+import { NoticiasComponent } from './cmp-routing/noticias/noticias.component';
+import { TarjetaCreditoModule } from './tarjeta-credito/tarjeta-credito.module';
 
 @NgModule({
   declarations: [
@@ -46,14 +57,26 @@ import { OfertaComponent } from './cmp-http/oferta/oferta.component';
     CmpObservablesComponent,
     CmpHttpComponent,
     OfertaComponent,
+    CmpRoutingComponent,
+    UsuariosComponent,
+    NuevoUsuarioComponent,
+    InfoUsuarioComponent,
+    EditarUsuarioComponent,
+    ErrorComponent,
+    TiempoComponent,
+    NoticiasComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Router,
+    TarjetaCreditoModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,39 @@
+<h2>Routing</h2>
+
+<ul>
+  <li>
+    <a [routerLink]="['/usuarios']">Usuarios</a>
+  </li>
+  <li>
+    <a [routerLink]="['/nuevo-usuario']">Nuevo Usuario</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
+
+<hr>
+<hr>
+
+<ul>
+  <li>
+    <a [routerLink]="[{ outlets: {auxiliar: 'tiempo'} }]">Tiempo</a>
+  </li>
+  <li>
+    <a [routerLink]="[{ outlets: {auxiliar: 'noticias'} }]">Noticias</a>
+  </li>
+</ul>
+
+<router-outlet name="auxiliar"></router-outlet>
+
+<!-- <hr>
+<hr>
+
+<ul>
+  <li>
+    <a [routerLink]="[{ outlets: {auxiliar1: 'tiempo'} }]">Tiempo</a>
+  </li>
+  <li>
+    <a [routerLink]="[{ outlets: {auxiliar1: 'noticias'} }]">Noticias</a>
+  </li>
+</ul>
+<router-outlet name="auxiliar1"></router-outlet> -->

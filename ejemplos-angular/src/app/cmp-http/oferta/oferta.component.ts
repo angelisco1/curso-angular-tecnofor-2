@@ -23,7 +23,7 @@ export class OfertaComponent implements OnInit {
           'Oferta id: ' + this.oferta.id,
           'success'
         )
-        this.ofertasTrabajoServ.emitirActualizacion();
+        // this.ofertasTrabajoServ.emitirActualizacion();
       });
   }
 }

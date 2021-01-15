@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertasTrabajoService } from './ofertas-trabajo.service';
 import Swal from 'sweetalert2';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-cmp-http',
@@ -9,7 +10,9 @@ import Swal from 'sweetalert2';
 })
 export class CmpHttpComponent implements OnInit {
   ofertasTrabajo;
-  constructor(private ofertasTrabajoServ: OfertasTrabajoService) { }
+  isLoggedIn: boolean = false;
+
+  constructor(private ofertasTrabajoServ: OfertasTrabajoService, private loginServ: LoginService) { }
 
   ngOnInit(): void {
     this.getOfertas();
@@ -30,7 +33,7 @@ export class CmpHttpComponent implements OnInit {
     this.ofertasTrabajoServ.crearOfertaTrabajo()
       .subscribe((resp: any) => {
         // this.getOfertas();
-        this.ofertasTrabajoServ.emitirActualizacion();
+        // this.ofertasTrabajoServ.emitirActualizacion();
         Swal.fire(
           'Oferta creada',
           `Oferta con id: ${resp.name}`,
@@ -39,4 +42,13 @@ export class CmpHttpComponent implements OnInit {
       });
   }
 
+  login() {
+    this.loginServ.guardarToken();
+    this.isLoggedIn = true;
+  }
+
+  logout() {
+    this.loginServ.eliminarToken();
+    this.isLoggedIn = false;
+  }
 }
